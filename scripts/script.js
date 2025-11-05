@@ -1,5 +1,5 @@
 window.addEventListener('scroll', function() {
-  const navbar = document.querySelector('header');
+  let navbar = document.querySelector('header');
   if (window.scrollY > 50) {
     navbar.classList.add('scrolled');
   } else {
@@ -7,9 +7,9 @@ window.addEventListener('scroll', function() {
   }
 });
 
-const modal = document.getElementById("loginModal");
-const openBtn = document.getElementById("openmodal");
-const closeBtn = document.getElementById("close");
+let modal = document.getElementById("loginModal");
+let openBtn = document.getElementById("openmodal");
+let closeBtn = document.getElementById("close");
 
 openBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
@@ -21,3 +21,4 @@ function openModal() {
 function closeModal() {
   modal.style.display = "none";
 }
+

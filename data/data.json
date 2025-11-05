@@ -1,21 +1,4 @@
 {
-  "profile": {
-    "first_name": "Sarah",
-    "last_name": "Johnson",
-    "bio": "Full-Stack Developer & UI/UX Designer",
-    "rating": 4.5,
-    "photo": "assets/img/user.jpg",
-    "hourly_rate": 40,
-    "about": "I’m a passionate developer with 5+ years of experience building modern web applications. I specialize in creating responsive websites with a focus on performance and great UX. I’ve worked with clients from startups to established companies on various projects worldwide.",
-    "skills": [
-      "HTML",
-      "CSS / Bootstrap",
-      "JavaScript",
-      "React",
-      "PHP / Laravel",
-      "MySQL",
-      "UI/UX Design"
-    ],
     "projects": [
       {
         "title": "E-commerce Website",
@@ -48,4 +31,3 @@
       }
     ]
   }
-}
