@@ -4,11 +4,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>FreelanceLink — Freelancer Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 <body class="bg-light">
+    <div class="modal-connexion" id="loginModal">
+        <div class="modal-content w-50">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="m-0">Modifier Mon Profil</h5>
+                <i class="bi bi-x-lg" id="close" style="cursor:pointer;"></i>
+            </div>
+            <form action="">
+                <label class="my-3">First Name</label>
+                <input class="form-control" type="text" required placeholder="Sarah">
+
+                <label class="my-3">Last Name</label>
+                <input class="form-control" type="text" required placeholder="Johnson">
+
+                <label class="my-3">Bio</label>
+                <input class="form-control" type="text" required placeholder="Full-Stack Developer & UI/UX Designer">
+
+                <label class="my-3">Compétences principales</label>
+                <input class="form-control" type="text" required placeholder="HTML, CSS, JS, PHP">
+
+                <label class="my-3">Taux horaire ($/h)</label>
+                <input class="form-control" type="number" required placeholder="40">
+                <center class="mt-4">
+                  <button type="submit" class="btn btn-outline-secondary">Enregistrer les modifications</button>
+                </center>
+            </form>
+        </div>
+    </div>
     <header class="bg-dark">
       <nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-3">
         <div class="container">
@@ -61,6 +88,9 @@
           <button class="btn btn-hire rounded-pill px-4 py-2">
             Hire Sarah
           </button>
+          <button class="btn btn-hire rounded-pill px-4 py-2" id="openmodal">
+            Modifier Mon Profile
+          </button>
         </div>
       </div>
     </section>
@@ -89,36 +119,36 @@
       <h4 class="fw-semibold mb-4">Projects</h4>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="project-card">
+          <div class="project-card border rounded-3 overflow-hidden shadow-sm">
             <div class="p-3">
               <h6 class="fw-bold mb-1">E-commerce Website</h6>
-              <p class="text-muted small mb-0">Built with Laravel & Vue.js</p>
+              <p class="text-muted small mb-2">Built with Laravel & Vue.js</p>
             </div>
+            <img src="assets/img/project.jpg" alt="E-commerce Website" class="w-100 project-img">
           </div>
         </div>
+
         <div class="col-md-4">
-          <div class="project-card">
+          <div class="project-card border rounded-3 overflow-hidden shadow-sm">
             <div class="p-3">
               <h6 class="fw-bold mb-1">Portfolio Website</h6>
-              <p class="text-muted small mb-0">
-                Custom design and responsive layout
-              </p>
+              <p class="text-muted small mb-2">Custom design and responsive layout</p>
             </div>
+            <img src="assets/img/project.jpg" alt="Portfolio Website" class="w-100 project-img">
           </div>
         </div>
+
         <div class="col-md-4">
-          <div class="project-card">
+          <div class="project-card border rounded-3 overflow-hidden shadow-sm">
             <div class="p-3">
               <h6 class="fw-bold mb-1">Dashboard System</h6>
-              <p class="text-muted small mb-0">
-                Admin panel with real-time stats
-              </p>
+              <p class="text-muted small mb-2">Admin panel with real-time stats</p>
             </div>
+            <img src="assets/img/project.jpg" alt="Dashboard System" class="w-100 project-img">
           </div>
         </div>
       </div>
     </section>
-
     <section class="container my-5">
       <h4 class="fw-semibold mb-4">Tarifs</h4>
       <div class="row g-4">
@@ -205,9 +235,7 @@
             <h6 class="text-secondary">For Clients</h6>
             <ul class="list-unstyled small">
               <li>
-                <a class="text-white text-decoration-none" href="#"
-                  >Find Talent</a
-                >
+                <a class="text-white text-decoration-none" href="#">Find Talent</a>
               </li>
               <li>
                 <a class="text-white text-decoration-none" href="#">Post Job</a>
@@ -218,9 +246,7 @@
             <h6 class="text-secondary">For Freelancers</h6>
             <ul class="list-unstyled small">
               <li>
-                <a class="text-white text-decoration-none" href="#"
-                  >Find Work</a
-                >
+                <a class="text-white text-decoration-none" href="#">Find Work</a>
               </li>
               <li>
                 <a class="text-white text-decoration-none" href="#">Help</a>
@@ -235,7 +261,7 @@
         </div>
       </div>
     </footer>
-    <script src="assets/JS/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+<script src="assets/JS/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
