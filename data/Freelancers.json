@@ -1,0 +1,129 @@
+[
+    {
+        "name": "younes raji",
+        "photo":"",
+        "rate": 4.9,
+        "Skills": ["graphic designre","DevOps", "figma","frontEnd dev", "back Dev"],
+        "price":50,
+        "description": "what all this about",
+        "jobs":1500},
+
+{
+        "name": "Mohamed Amine Teljaoui",
+        "photo":"",
+        "rate": 2.8,
+        "Skills": ["full Stack dev","graphic designre"], 
+        "price": 10,
+        "description": "what all this about",
+        "jobs":10},
+{
+        "name": "aymen  oumalla",
+        "photo":"",
+        "rate": 1.5,
+        "Skills": ["full stack dev","bootstrap"],
+        "price":1.3,
+        "description": "what all this about",
+        "bio": "full satck dev",
+        "jobs":100
+},
+{
+        "name": "chouaib loubbati",
+        "photo":"",
+        "rate": 4.6,
+        "Skills": ["full stack dev", "figma","HTML","CSS"],
+        "price":20,
+        "description": "what all this about",
+        "bio": "full satck dev",
+        "jobs":159
+},
+{
+        "name": "Adam",
+        "photo":"",
+        "rate": 4.3,
+        "Skills": ["full stack dev", "figma","HTML","CSS"],
+        "price":20,
+        "description": "what all this about",
+        "bio": "full satck dev",
+        "jobs":159
+},
+{
+        "name": "chouaib loubbati",
+        "photo":"",
+        "rate": 4.6,
+        "Skills": ["full stack dev", "figma","HTML","CSS"],
+        "price":20,
+        "description": "what all this about",
+        "bio": "full satck dev",
+        "jobs":159
+},
+{
+        "name": "chouaib loubbati",
+        "photo":"",
+        "rate": 4.6,
+        "Skills": ["full stack dev", "figma","HTML","CSS"],
+        "price":20,
+        "description": "what all this about",
+        "bio": "full satck dev",
+        "jobs":159
+},
+{
+        "name": "chouaib loubbati",
+        "photo":"",
+        "rate": 4.6,
+        "Skills": ["full stack dev", "figma","HTML","CSS"],
+        "price":30,
+        "description": "what all this about",
+        "bio": "full satck dev",
+        "jobs":159
+},
+{
+        "name": "alex",
+        "photo":"",
+        "rate": 4.4,
+        "Skills": ["full stack dev", "figma","HTML","CSS"],
+        "price":23,
+        "description": "what all this about",
+        "bio": "full satck dev",
+        "jobs":29
+},
+{
+        "name": "youssef rajix",
+        "photo":"",
+        "rate": 3.9,
+        "Skills": ["full stack dev", "figma","HTML","CSS"],
+        "price":100,
+        "description": "what all this about",
+        "bio": "full satck dev",
+        "jobs":159
+},
+{
+        "name": "anour",
+        "photo":"",
+        "rate": 4.7,
+        "Skills": ["full stack dev", "figma","HTML","CSS"],
+        "price":49,
+        "description": "what all this about",
+        "bio": "full satck dev",
+        "jobs":159
+},
+{
+        "name": "yasser char9awi",
+        "photo":"",
+        "rate": 4.5,
+        "Skills": ["full stack dev", "figma","HTML","CSS"],
+        "price":50,
+        "description": "what all this about",
+        "bio": "full satck dev",
+        "jobs":19
+},
+{
+        "name": "hammza",
+        "photo":"",
+        "rate": 4.3,
+        "Skills": ["full stack dev", "figma","HTML","CSS"],
+        "price":24,
+        "description": "what all this about",
+        "bio": "full satck dev",
+        "jobs":49
+}
+]
