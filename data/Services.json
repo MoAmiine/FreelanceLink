@@ -1,0 +1,58 @@
+{
+    "services": [
+        {
+            "id": 1,
+            "nom": "Develeppement web",
+            "description": "Création de sites web modernes et responsives, utilisant HTML, CSS, JavaScript, et React.",
+            "prix": 400,
+            "duree": "2 semaines",
+            "categorie": "Develeppement",
+            "disponibilite": "Disponible"
+        },
+        {
+            "id": 2,
+            "nom": "Design UX/UI",
+            "description": "Conception de l'expérience utilisateur et de l'interface pour des applications mobiles et sites web.",
+            "prix": 250,
+            "duree": "1 semaine",
+            "categorie": "Design",
+            "disponibilite": "Disponible"
+        },
+        {
+            "id": 3,
+            "nom": "Rédaction SEO",
+            "description": "Rédaction de contenu optimisé pour les moteurs de recherche (SEO) pour blogs, articles, et sites web.",
+            "prix": 200,
+            "duree": "3 semaine",
+            "categorie": "Rédaction",
+            "disponibilite": "Non Disponible"
+        },
+        {
+            "id": 4,
+            "nom": "Creation de Logo",
+            "description": "Conception de Logo créactifs et professionnels pour des marques , entreprises ou projets .",
+            "prix": 200,
+            "duree": "4 semaine",
+            "categorie": "Design",
+            "disponibilite": "Disponible"
+        },
+        {
+            "id": 5,
+            "nom": "Develeppement d'application mobile ",
+            "description": "Création d'applications mobiles natives ou hybrides pour Android et iOS, avec des fonctionnalités avancées.",
+            "prix": 1000,
+            "duree": "4 semaine",
+            "categorie": "Develeppement",
+            "disponibilite": "Disponible"
+        },
+        {
+            "id": 6,
+            "nom": "Consultation Marketing Digital",
+            "description": "Conseils et stratégies pour améliorer la visibilité et les performances d'un site web sur les moteurs de recherche.",
+            "prix": 200,
+            "duree": "2 semaine",
+            "categorie": "Marketing",
+            "disponibilite": "Non Disponible"
+        }
+    ]
+}
