@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>FreelanceLink — Freelancer Profile</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
 </head>
 <body class="bg-light">
     <div class="modal-connexion" id="loginModal">
@@ -15,23 +15,23 @@
                 <h5 class="m-0">Modifier Mon Profil</h5>
                 <i class="bi bi-x-lg" id="close" style="cursor:pointer;"></i>
             </div>
-            <form action="">
+            <form id="profileForm">
                 <label class="my-3">First Name</label>
-                <input class="form-control" type="text" required placeholder="Sarah">
+                <input class="form-control" type="text" name="first_name" required placeholder="Johnson">
 
                 <label class="my-3">Last Name</label>
-                <input class="form-control" type="text" required placeholder="Johnson">
+                <input class="form-control" type="text" name="last_name" required placeholder="Johnson">
 
                 <label class="my-3">Bio</label>
-                <input class="form-control" type="text" required placeholder="Full-Stack Developer & UI/UX Designer">
+                <input class="form-control" type="text" name="bio" required placeholder="Full-Stack Developer & UI/UX Designer">
 
-                <label class="my-3">Compétences principales</label>
-                <input class="form-control" type="text" required placeholder="HTML, CSS, JS, PHP">
+                <label class="my-3">Skills</label>
+                <input class="form-control" type="text" name="skills" required placeholder="HTML, CSS, JS, PHP">
 
-                <label class="my-3">Taux horaire ($/h)</label>
-                <input class="form-control" type="number" required placeholder="40">
+                <label class="my-3">hourly rate ($/h)</label>
+                <input class="form-control" type="number" name="hourly_rate" required placeholder="40">
                 <center class="mt-4">
-                  <button type="submit" class="btn btn-outline-secondary">Enregistrer les modifications</button>
+                  <button type="submit" class="btn btn-outline-secondary">Save the modifications</button>
                 </center>
             </form>
         </div>
@@ -49,7 +49,7 @@
           <div class="collapse navbar-collapse justify-content-end" id="nav">
             <ul class="navbar-nav gap-3">
               <li class="nav-item">
-                <a class="nav-link text-white" href="index.html">Home</a>
+                <a class="nav-link text-white" href="../index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="#">Services</a>
@@ -73,10 +73,10 @@
     </header>
     <section class="container" style="padding-top: 5em;">
       <div class="profile-header d-flex flex-wrap align-items-center gap-4">
-        <img src="assets/img/user.jpg" alt="Freelancer Photo" class="profile-photo"/>
+        <img src="../assets/img/user.jpg" alt="Freelancer Photo" class="profile-photo"/>
         <div>
-          <h2 class="profile-name mb-1">Sarah Johnson</h2>
-          <p class="mb-2">Full-Stack Developer & UI/UX Designer</p>
+          <div class="profile_info">
+          </div>
           <div class="rating mb-2">
             <i class="bi bi-star-fill"></i>
             <i class="bi bi-star-fill"></i>
@@ -86,7 +86,7 @@
             <span class="ms-1">(4.5)</span>
           </div>
           <button class="btn btn-hire rounded-pill px-4 py-2">
-            Hire Sarah
+            Hire Me
           </button>
           <button class="btn btn-hire rounded-pill px-4 py-2" id="openmodal">
             Modifier Mon Profile
@@ -96,7 +96,7 @@
     </section>
     <section class="container my-5">
       <h4 class="fw-semibold mb-3">About</h4>
-      <p class="text-muted">
+      <p class="about">
         I’m a passionate developer with 5+ years of experience building modern
         web applications. I specialize in creating responsive websites with a
         focus on performance and great UX. I’ve worked with clients from
@@ -105,48 +105,13 @@
     </section>
     <section class="container my-5">
       <h4 class="fw-semibold mb-3">Skills</h4>
-      <div>
-        <span class="skill-badge">HTML</span>
-        <span class="skill-badge">CSS / Bootstrap</span>
-        <span class="skill-badge">JavaScript</span>
-        <span class="skill-badge">React</span>
-        <span class="skill-badge">PHP / Laravel</span>
-        <span class="skill-badge">MySQL</span>
-        <span class="skill-badge">UI/UX Design</span>
+      <div class="skills">
       </div>
     </section>
     <section class="container my-5">
       <h4 class="fw-semibold mb-4">Projects</h4>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="project-card border rounded-3 overflow-hidden shadow-sm">
-            <div class="p-3">
-              <h6 class="fw-bold mb-1">E-commerce Website</h6>
-              <p class="text-muted small mb-2">Built with Laravel & Vue.js</p>
-            </div>
-            <img src="assets/img/project.jpg" alt="E-commerce Website" class="w-100 project-img">
-          </div>
-        </div>
+      <div class="project-container row g-4">
 
-        <div class="col-md-4">
-          <div class="project-card border rounded-3 overflow-hidden shadow-sm">
-            <div class="p-3">
-              <h6 class="fw-bold mb-1">Portfolio Website</h6>
-              <p class="text-muted small mb-2">Custom design and responsive layout</p>
-            </div>
-            <img src="assets/img/project.jpg" alt="Portfolio Website" class="w-100 project-img">
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="project-card border rounded-3 overflow-hidden shadow-sm">
-            <div class="p-3">
-              <h6 class="fw-bold mb-1">Dashboard System</h6>
-              <p class="text-muted small mb-2">Admin panel with real-time stats</p>
-            </div>
-            <img src="assets/img/project.jpg" alt="Dashboard System" class="w-100 project-img">
-          </div>
-        </div>
       </div>
     </section>
     <section class="container my-5">
@@ -174,39 +139,7 @@
     </section>
     <section class="container my-5">
       <h4 class="fw-semibold mb-4">Avis</h4>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="review-card">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <strong>John Doe</strong>
-              <div class="text-warning small">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star"></i>
-              </div>
-            </div>
-            <p class="text-muted mb-0 small">
-              Sarah did an amazing job on our company’s website! Communication
-              was great and delivery was fast.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="review-card">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <strong>Maria Lopez</strong>
-              <div class="text-warning small">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i
-                ><i class="bi bi-star"></i>
-              </div>
-            </div>
-            <p class="text-muted mb-0 small">
-              Great experience overall. Very talented and reliable freelancer.
-              Highly recommend!
-            </p>
-          </div>
-        </div>
+      <div class="Avis_container row g-4">
       </div>
     </section>
     <footer class="bg-dark text-light pt-5 pb-3">
@@ -261,7 +194,7 @@
         </div>
       </div>
     </footer>
-<script src="assets/JS/script.js"></script>
+<script src="../scripts/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
