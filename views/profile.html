@@ -15,20 +15,23 @@
                 <h5 class="m-0">Modifier Mon Profil</h5>
                 <i class="bi bi-x-lg" id="close" style="cursor:pointer;"></i>
             </div>
-            <form>
+            <form id="profileForm">
+                <label class="my-3">First Name</label>
+                <input class="form-control" type="text" name="first_name" required placeholder="Johnson">
+
                 <label class="my-3">Last Name</label>
-                <input class="form-control" type="text" required placeholder="Johnson">
+                <input class="form-control" type="text" name="last_name" required placeholder="Johnson">
 
                 <label class="my-3">Bio</label>
-                <input class="form-control" type="text" required placeholder="Full-Stack Developer & UI/UX Designer">
+                <input class="form-control" type="text" name="bio" required placeholder="Full-Stack Developer & UI/UX Designer">
 
-                <label class="my-3">Compétences principales</label>
-                <input class="form-control" type="text" required placeholder="HTML, CSS, JS, PHP">
+                <label class="my-3">Skills</label>
+                <input class="form-control" type="text" name="skills" required placeholder="HTML, CSS, JS, PHP">
 
-                <label class="my-3">Taux horaire ($/h)</label>
-                <input class="form-control" type="number" required placeholder="40">
+                <label class="my-3">hourly rate ($/h)</label>
+                <input class="form-control" type="number" name="hourly_rate" required placeholder="40">
                 <center class="mt-4">
-                  <button type="submit" class="btn btn-outline-secondary">Enregistrer les modifications</button>
+                  <button type="submit" class="btn btn-outline-secondary">Save the modifications</button>
                 </center>
             </form>
         </div>
@@ -107,30 +110,8 @@
     </section>
     <section class="container my-5">
       <h4 class="fw-semibold mb-4">Projects</h4>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="project-card border rounded-5 overflow-hidden shadow-sm">
-            <div class="project-container p-3">
-            </div>
-            <img src="../assets/img/project.jpg" alt="E-commerce Website" class="w-100 project-img">
-          </div>
-        </div>
+      <div class="project-container row g-4">
 
-        <div class="col-md-4">
-          <div class="project-card border rounded-5 overflow-hidden shadow-sm">
-            <div class="project-container p-3">
-            </div>
-            <img src="../assets/img/project.jpg" alt="Portfolio Website" class="w-100 project-img">
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="project-card border rounded-5 overflow-hidden shadow-sm">
-            <div class="project-container p-3">
-            </div>
-            <img src="../assets/img/project.jpg" alt="Dashboard System" class="w-100 project-img">
-          </div>
-        </div>
       </div>
     </section>
     <section class="container my-5">
@@ -158,39 +139,7 @@
     </section>
     <section class="container my-5">
       <h4 class="fw-semibold mb-4">Avis</h4>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="review-card">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <strong>John Doe</strong>
-              <div class="text-warning small">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star"></i>
-              </div>
-            </div>
-            <p class="text-muted mb-0 small">
-              Sarah did an amazing job on our company’s website! Communication
-              was great and delivery was fast.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="review-card">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <strong>Maria Lopez</strong>
-              <div class="text-warning small">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i
-                ><i class="bi bi-star"></i>
-              </div>
-            </div>
-            <p class="text-muted mb-0 small">
-              Great experience overall. Very talented and reliable freelancer.
-              Highly recommend!
-            </p>
-          </div>
-        </div>
+      <div class="Avis_container row g-4">
       </div>
     </section>
     <footer class="bg-dark text-light pt-5 pb-3">
