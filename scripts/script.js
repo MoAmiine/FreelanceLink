@@ -1,0 +1,117 @@
+window.addEventListener('scroll', function() {
+  let navbar = document.querySelector('header');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+let modal = document.getElementById("loginModal");
+let openBtn = document.getElementById("openmodal");
+let closeBtn = document.getElementById("close");
+
+openBtn.addEventListener("click", openModal);
+closeBtn.addEventListener("click", closeModal);
+
+function openModal() {
+  modal.style.display = "flex";
+}
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+function displayProfile(profile) {
+  document.querySelector(".profile_info").innerHTML = `
+    <h2 class="profile-name mb-1">${profile.first_name} ${profile.last_name}</h2>
+    <p class="mb-2">${profile.bio}</p>
+  `;
+
+  document.querySelector(".about").innerHTML = `<p class="mb-2">${profile.about}</p>`;
+
+  let skillsContainer = document.querySelector(".skills");
+  skillsContainer.innerHTML = "";
+  profile.skills.forEach(skill => {
+    skillsContainer.innerHTML += `<span class="skill-badge">${skill}</span>`;
+  });
+
+  document.querySelector(".pricing-box h4").textContent = `$${profile.hourly_rate} / h`;
+}
+
+function displayProjects(profile) {
+    profile.projects.forEach(project => {
+    let project_container = document.querySelector(".project-container");
+    project_container.innerHTML +=`
+      <div class="col-md-4">
+        <div class="project-card border rounded-5 overflow-hidden shadow-sm">
+          <div class="p-3">
+            <h6 class="fw-bold mb-1">${project.title}</h6>
+            <p class="text-muted small mb-2">${project.description}</p>
+          </div>
+          <img src="../assets/img/project.jpg" alt="${project.title}" class="w-100 project-img">
+        </div>
+      </div>
+    `
+  });
+}
+
+function displayReview(profile) {
+  profile.reviews.forEach(review => {
+    let review_card = document.querySelector(".Avis_container")
+    review_card.innerHTML +=`
+      <div class="col-md-6">
+        <div class="review-card">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <strong>${review.author}</strong>
+          <div class="text-warning small">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            <i class="bi bi-star"></i>
+          </div>
+        </div>
+        <p class="text-muted mb-0 small">${review.comment}</p>
+        </div>
+      </div>
+    `
+  });
+}
+
+async function fetchData(file) {
+  let response = await fetch(file);
+  let data = await response.json();
+  let profile = data.profile;
+
+  localStorage.setItem("profileData", JSON.stringify(profile));
+  displayProfile(profile);
+  displayProjects(profile);
+  displayReview(profile);
+  fillForm(profile);
+}
+
+function fillForm(profile) {
+  document.querySelector("[name='first_name']").value = profile.first_name;
+  document.querySelector("[name='last_name']").value = profile.last_name;
+  document.querySelector("[name='bio']").value = profile.bio;
+  document.querySelector("[name='skills']").value = profile.skills.join(", ");
+  document.querySelector("[name='hourly_rate']").value = profile.hourly_rate;
+}
+
+document.getElementById("profileForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  let profile = {
+    first_name: document.querySelector("[name='first_name']").value,
+    last_name: document.querySelector("[name='last_name']").value,
+    bio: document.querySelector("[name='bio']").value,
+    skills: document.querySelector("[name='skills']").value.split(",").map(s => s.trim()),
+    hourly_rate: document.querySelector("[name='hourly_rate']").value,
+    about: document.querySelector(".about").textContent
+  };
+
+  localStorage.setItem("profileData", JSON.stringify(profile));
+
+  displayProfile(profile);
+  closeModal();
+});
+
+fetchData("../data/data.json");

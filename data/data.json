@@ -1,7 +1,7 @@
 {
   "profile": {
-    "first_name": "Sarah",
-    "last_name": "Johnson",
+    "first_name": "Aymen",
+    "last_name": "Oumaalla",
     "bio": "Full-Stack Developer & UI/UX Designer",
     "rating": 4.5,
     "photo": "assets/img/user.jpg",
@@ -37,12 +37,12 @@
     },
     "reviews": [
       {
-        "author": "John Doe",
+        "author": "Aymen Oumaalla",
         "rating": 4,
         "comment": "Sarah did an amazing job on our company’s website! Communication was great and delivery was fast."
       },
       {
-        "author": "Maria Lopez",
+        "author": "Saad Oumaalla",
         "rating": 3.5,
         "comment": "Great experience overall. Very talented and reliable freelancer. Highly recommend!"
       }
