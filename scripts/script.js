@@ -36,6 +36,24 @@ function displayProfile(profile) {
     skillsContainer.innerHTML += `<span class="skill-badge">${skill}</span>`;
   });
 
+  let stars = "";
+  
+  
+  for (let index = 0; index < profile.rating; index++) {
+    stars += `<i class="bi bi-star-fill"></i>`
+  }
+
+  if (profile.rating < 5) {
+    let result = 5 - profile.rating;
+    for (let index = 0; index < result; index++) {
+      stars += `<i class="bi bi-star"></i>`
+    }
+  }
+
+  document.querySelector(".rating").innerHTML = `
+    ${stars}
+  `
+
   document.querySelector(".pricing-box h4").textContent = `$${profile.hourly_rate} / h`;
 }
 
@@ -59,15 +77,24 @@ function displayProjects(profile) {
 function displayReview(profile) {
   profile.reviews.forEach(review => {
     let review_card = document.querySelector(".Avis_container")
+
+    let stars = "";
+    for (let i = 0; i < review.rating; i++) {
+      stars += `<i class="bi bi-star-fill"></i>`;
+    }
+    if (review.rating < 5) {
+      let rest = 5 - review.rating;
+      for (let index = 0; index < rest; index++) {
+        stars += `<i class="bi bi-star"></i>`;
+      } 
+    }
     review_card.innerHTML +=`
       <div class="col-md-6">
         <div class="review-card">
         <div class="d-flex justify-content-between align-items-center mb-2">
           <strong>${review.author}</strong>
           <div class="text-warning small">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            <i class="bi bi-star"></i>
+            ${stars}
           </div>
         </div>
         <p class="text-muted mb-0 small">${review.comment}</p>
