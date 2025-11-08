@@ -34,7 +34,6 @@ header {
   display: inline-block;
 }
 
-// Hero Section
 .hero-wrap {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../assets/img/background2.png");
@@ -89,7 +88,6 @@ header {
   }
 }
 
-// Buttons
 .btn-hire {
   background: var(--cyan);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -105,7 +103,6 @@ header {
   color: #fff;
 }
 
-// Find card
 .findcard {
   background: linear-gradient(135deg, #ff7a7a 0%, #a23ce6 40%, #8b4cf6 100%);
   color: #fff;
@@ -124,7 +121,6 @@ header {
   }
 }
 
-// Image placeholder
 .image-placeholder {
   width: 25em;
   height: 100px;
@@ -138,7 +134,6 @@ header {
   }
 }
 
-// Services
 .service-box {
   width: 10em;
   height: 10em;
@@ -163,12 +158,10 @@ header {
   }
 }
 
-// Footer
 footer {
   border-top: 1px solid rgba(255, 255, 255, 0.02);
 }
 
-// Profile Page
 .profile-header {
   background: linear-gradient(135deg, #00e6d0, #12d6a7);
   color: #fff;
@@ -205,7 +198,6 @@ footer {
   display: inline-block;
 }
 
-// Project Cards
 .project-card {
   background: #fff;
   border-radius: 14px;
@@ -228,7 +220,6 @@ footer {
   }
 }
 
-// Pricing & Reviews
 .pricing-box {
   background: #f9f9f9;
   border-radius: 10px;
@@ -243,7 +234,6 @@ footer {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-// Modal
 .modal-connexion {
   position: fixed;
   top: 0;
@@ -268,12 +258,10 @@ footer {
   }
 }
 
-// Utilities
 .rounded-3 {
   border-radius: 1rem !important;
 }
 
-// Responsive
 @media (max-width: 767px) {
   .hero-overlay {
     padding: 28px 18px 0;
@@ -296,3 +284,38 @@ footer {
     height: 420px;
   }
 }
+
+.sticky-filters {
+  padding: 1rem 0 1.25rem 0;
+  margin-bottom: 1.5rem;
+  background-color: rgba(248,250,251,0.9);
+  backdrop-filter: blur(6px);
+}
+
+.search-input-wrap {
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  height:56px;
+  border-radius: 12px;
+  background-color: #fff;
+  border: 1px solid rgba(15,23,24,0.06);
+  padding: 0.25rem 0.5rem;
+}
+
+.search-input {
+  border:0; outline:0; width:100%; height:44px;
+}
+.filter-pill{
+  display:inline-flex; align-items:center; gap:.5rem; height:36px; padding:0 .75rem; border-radius:10px; background:#fff; border:1px solid rgba(15,23,24,0.06);
+  font-size:.9rem; color: #0d171b;
+}
+.filter-pill{ background:#0f1720; border-color: rgba(100,116,139,0.22); color:#e6eef6; }
+
+.col-lg-4 {
+  background: #fff;
+  border: 1px solid rgba(15,23,24,0.06);
+  box-shadow: 0 6px 18px rgba(13,23,27,0.03);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.col-md-4:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(13,23,27,0.08); }

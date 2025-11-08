@@ -54,7 +54,9 @@ function displayProfile(profile) {
     ${stars}
   `
 
-  document.querySelector(".pricing-box h4").textContent = `$${profile.hourly_rate} / h`;
+  document.querySelector(".hourly-rate-box h4").textContent = `$${profile.hourly_rate} / h`;
+  document.querySelector(".website-project-box h4").textContent = `${profile.pricing.website_project}`;
+  document.querySelector(".app-box h4").textContent = `${profile.pricing.full_app_development}`;
 }
 
 function displayProjects(profile) {
@@ -141,4 +143,4 @@ document.getElementById("profileForm").addEventListener("submit", (e) => {
   closeModal();
 });
 
-fetchData("../data/data.json");
+fetchData("../data/Freelancers.json");
