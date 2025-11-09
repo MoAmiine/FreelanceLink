@@ -11,9 +11,10 @@ let modal = document.getElementById("loginModal");
 let openBtn = document.getElementById("openmodal");
 let closeBtn = document.getElementById("close");
 
-openBtn.addEventListener("click", openModal);
-closeBtn.addEventListener("click", closeModal);
-
+if (openBtn && closeBtn && modal) {
+  openBtn.addEventListener("click", () => modal.style.display = "flex");
+  closeBtn.addEventListener("click", () => modal.style.display = "none");
+}
 function openModal() {
   modal.style.display = "flex";
 }
@@ -53,10 +54,33 @@ function displayProfile(profile) {
   document.querySelector(".rating").innerHTML = `
     ${stars}
   `
-
   // document.querySelector(".hourly-rate-box h4").textContent = `$${profile.hourly_rate} / h`;
   // document.querySelector(".website-project-box h4").textContent = `${profile.pricing.website_project}`;
   // document.querySelector(".app-box h4").textContent = `${profile.pricing.full_app_development}`;
+}
+
+function displayUsers(profile) {
+  let freelancer_template = document.querySelector(".freelancer-template");
+  let freelancer_container = document.getElementById("freelancerContainer");
+  let clone = freelancer_template.cloneNode(true)
+  clone.classList.remove("d-none")
+  clone.innerHTML = `  
+    <div class="card-body text-center">
+      <div class="avatar-wrap">
+        <img class="rounded-circle h-25 w-25" src="../assets/img/freelancer.png"/>
+      </div>
+      <h4 class="title">${profile.first_name} ${profile.last_name}</h4>
+      <p class="subtitle">${profile.bio}</p>
+      <div class="rating d-flex justify-content-center align-items-center">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; color:#f59e0b;">star</span>
+        <strong>5.0</strong>
+        <span class="text-muted-small">(98)</span>
+      </div>
+    </div>
+    <div class="card-desc bio p-4">${profile.description}</div>
+    <div class="card-footer p-4 mt-auto"><a href="../views/profile.html?id=${profile.id}" class="btn btn-outline-primary w-100">View Profile</a></div>
+  `
+  freelancer_container.appendChild(clone);
 }
 
 // function displayProjects(profile) {
@@ -125,6 +149,12 @@ async function loadProfileById(file, id) {
   }
 }
 
+async function loadAllProfiles(file) {
+  let response = await fetch(file);
+  let profiles = await response.json();
+  profiles.forEach(profile => displayUsers(profile));
+}
+
 function fillForm(profile) {
   document.querySelector("[name='first_name']").value = profile.first_name;
   document.querySelector("[name='last_name']").value = profile.last_name;
@@ -132,8 +162,9 @@ function fillForm(profile) {
   document.querySelector("[name='skills']").value = profile.skills.join(", ");
   // document.querySelector("[name='hourly_rate']").value = profile.hourly_rate;
 }
-
-document.getElementById("profileForm").addEventListener("submit", (e) => {
+let form = document.getElementById("profileForm");
+if (form) {
+  document.getElementById("profileForm").addEventListener("submit", (e) => {
   e.preventDefault();
   let profile = {
     first_name: document.querySelector("[name='first_name']").value,
@@ -148,6 +179,10 @@ document.getElementById("profileForm").addEventListener("submit", (e) => {
 
   displayProfile(profile);
   closeModal();
-});
+});}
 
-loadProfileById("../data/Freelancers.json", profileId);
+if (profileId) {
+  loadProfileById("../data/Freelancers.json", profileId);
+} else {
+  loadAllProfiles("../data/Freelancers.json");
+}
