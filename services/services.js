@@ -32,3 +32,23 @@ function ShowServices() {
             servicesList.appendChild(card)
     });
 }
+
+function ajouterService(svc) {
+    svc.preventDefault()
+    const service = {
+        id: Date.now(),
+        nom: document.getElementById("service-name"),
+        description: document.getElementById("service-description"),
+        duree: document.getElementById("service-duration"),
+        prix: document.getElementById("service-price"),
+        categorie: document.getElementById("service-category"),
+        disponibilite: document.getElementById("service-availability")
+    }
+
+    storageServices.push(service);
+    localStorage.setItem('service', JSON.stringify(storageServices));
+    document.getElementById("add-service-form").reset();
+    ShowServices();
+
+}
+
