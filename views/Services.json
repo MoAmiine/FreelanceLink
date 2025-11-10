@@ -6,7 +6,7 @@
       "description": "Création de sites web modernes et responsives",
       "prix": 400,
       "duree": "2 semaines",
-      "categorie": "Développement",
+
       "disponibilite": "Disponible"
     },
     {
@@ -15,7 +15,7 @@
       "description": "Conception de l’expérience utilisateur",
       "prix": 250,
       "duree": "1 semaine",
-      "categorie": "Design",
+     
       "disponibilite": "Disponible"
     }
   ]

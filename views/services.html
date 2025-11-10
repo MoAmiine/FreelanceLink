@@ -54,47 +54,47 @@
     <div class="row" id="services-list"></div>
   </main>
 
-  <!-- Modal تعديل الخدمة -->
-  <div class="modal fade" id="editModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Modifier Service</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <form id="edit-service-form">
-            <input type="hidden" id="edit-id">
-            <div class="mb-3">
-              <label class="form-label">Nom</label>
-              <input type="text" id="edit-name" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Description</label>
-              <textarea id="edit-description" class="form-control" rows="3" required></textarea>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Prix</label>
-              <input type="number" id="edit-price" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Durée</label>
-              <input type="text" id="edit-duration" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Catégorie</label>
-              <select id="edit-category" class="form-select"></select>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Disponibilité</label>
-              <input type="text" id="edit-availability" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Sauvegarder</button>
-          </form>
-        </div>
+<!-- modal -->
+<div class="modal fade" id="editModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modifier Service</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="edit-service-form">
+          <div class="mb-3">
+            <label for="edit-name" class="form-label">Nom</label>
+            <input type="text" id="edit-name" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit-description" class="form-label">Description</label>
+            <textarea id="edit-description" class="form-control" rows="3" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="edit-price" class="form-label">Prix</label>
+            <input type="number" id="edit-price" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit-duration" class="form-label">Durée</label>
+            <input type="text" id="edit-duration" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="edit-category" class="form-label">Catégorie</label>
+            <select id="edit-category" class="form-select"></select>
+          </div>
+          <div class="mb-3">
+            <label for="edit-availability" class="form-label">Disponibilité</label>
+            <input type="text" id="edit-availability" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Sauvegarder</button>
+        </form>
       </div>
     </div>
   </div>
+</div>
+
 
   <footer class="bg-dark text-light pt-5 pb-3">
     <div class="container">
