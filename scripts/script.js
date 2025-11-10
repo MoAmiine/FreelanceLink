@@ -21,15 +21,9 @@ if (openBtn && closeBtn && modal) {
   openBtn.addEventListener("click", () => modal.style.display = "flex");
   closeBtn.addEventListener("click", () => modal.style.display = "none");
 }
-function openModal() {
-  modal.style.display = "flex";
-}
-
-function closeModal() {
-  modal.style.display = "none";
-}
 
 function displayProfile(profile) {
+  if (!document.querySelector(".profile_info")) return;
   document.querySelector(".profile_info").innerHTML = `
     <h2 class="profile-name mb-1">${profile.first_name} ${profile.last_name}</h2>
     <p class="mb-2">${profile.bio}</p>
@@ -44,7 +38,6 @@ function displayProfile(profile) {
   });
 
   let stars = "";
-  
   
   for (let index = 0; index < profile.rating; index++) {
     stars += `<i class="bi bi-star-fill"></i>`
@@ -106,39 +99,40 @@ function displayUsers(profile) {
 //   });
 // }
 
-// function displayReview(profile) {
-//   profile.reviews.forEach(review => {
-//     let review_card = document.querySelector(".Avis_container")
+function displayReview(reviews) {
+  reviews.forEach(review => {
+    let review_card = document.querySelector(".Avis_container")
+    if (!review_card) return;
+    review_card.innerHTML = "";
 
-//     let stars = "";
-//     for (let i = 0; i < review.rating; i++) {
-//       stars += `<i class="bi bi-star-fill"></i>`;
-//     }
-//     if (review.rating < 5) {
-//       let rest = 5 - review.rating;
-//       for (let index = 0; index < rest; index++) {
-//         stars += `<i class="bi bi-star"></i>`;
-//       } 
-//     }
-//     review_card.innerHTML +=`
-//       <div class="col-md-6">
-//         <div class="review-card">
-//         <div class="d-flex justify-content-between align-items-center mb-2">
-//           <strong>${review.author}</strong>
-//           <div class="text-warning small">
-//             ${stars}
-//           </div>
-//         </div>
-//         <p class="text-muted mb-0 small">${review.comment}</p>
-//         </div>
-//       </div>
-//     `
-//   });
-// }
+    let stars = "";
+    for (let i = 0; i < review.rating; i++) {
+      stars += `<i class="bi bi-star-fill"></i>`;
+    }
+    if (review.rating < 5) {
+      let rest = 5 - review.rating;
+      for (let index = 0; index < rest; index++) {
+        stars += `<i class="bi bi-star"></i>`;
+      } 
+    }
+    review_card.innerHTML +=`
+      <div class="col-md-6">
+        <div class="review-card">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <strong>${review.author}</strong>
+          <div class="text-warning small">
+            ${stars}
+          </div>
+        </div>
+        <p class="text-muted mb-0 small">${review.comment}</p>
+        </div>
+      </div>
+    `
+  });
+}
 
 let urlParams = new URLSearchParams(window.location.search);
 let profileId = parseInt(urlParams.get("id"));
-
 
 async function loadProfileById(file, id) {
   let response = await fetch(file);
@@ -148,7 +142,6 @@ async function loadProfileById(file, id) {
   if (profile) {
     displayProfile(profile);
     // displayProjects(profile);
-    // displayReview(profile);
     fillForm(profile);
   } else {
     console.error("Profile not found!");
@@ -161,6 +154,56 @@ async function loadAllProfiles(file) {
   profiles.forEach(profile => displayUsers(profile));
 }
 
+async function loadReviews(path) {
+  let response = await fetch(path);
+  let data = await response.json();
+  let reviews = data.reviews || [];
+  
+  let stored = JSON.parse(localStorage.getItem("profileData"));
+  if (stored) reviews.push(stored);
+  
+  displayReview(reviews);
+  displayAllReviews(reviews);
+}
+
+let form = document.getElementById("profileForm");
+
+if (form) {
+  form.addEventListener("submit", (e) => {
+    let first = e.target.first_name.value;
+    let last = e.target.last_name.value;
+    let comment = e.target.comment.value;
+    let rating = e.target.rating.value;
+
+    let profile = {
+      author: `${first} ${last}`,
+      rating: rating,
+      comment: comment,
+    };
+
+    localStorage.setItem("profileData", JSON.stringify(profile));
+  });
+}
+
+function displayAllReviews(reviews) {
+  let container = document.querySelector(".reviews_container");
+  container.innerHTML = "";
+
+  reviews.forEach((review) => {
+    let stars = "";
+    for (let i = 0; i < review.rating; i++) stars += `<i class="bi bi-star-fill text-warning"></i>`;
+    for (let i = review.rating; i < 5; i++) stars += `<i class="bi bi-star"></i>`;
+
+    container.innerHTML += `
+      <div class="card mb-3 p-3 shadow-sm">
+        <h5 class="mb-1">${review.author}</h5>
+        <div class="mb-2">${stars}</div>
+        <p class="mb-0">${review.comment}</p>
+      </div>
+    `;
+  });
+}
+
 function fillForm(profile) {
   document.querySelector("[name='first_name']").value = profile.first_name;
   document.querySelector("[name='last_name']").value = profile.last_name;
@@ -168,9 +211,8 @@ function fillForm(profile) {
   document.querySelector("[name='skills']").value = profile.skills.join(", ");
   // document.querySelector("[name='hourly_rate']").value = profile.hourly_rate;
 }
-let form = document.getElementById("profileForm");
 if (form) {
-  document.getElementById("profileForm").addEventListener("submit", (e) => {
+  form.addEventListener("submit", (e) => {
   e.preventDefault();
   let profile = {
     first_name: document.querySelector("[name='first_name']").value,
@@ -184,11 +226,12 @@ if (form) {
   localStorage.setItem("profileData", JSON.stringify(profile));
 
   displayProfile(profile);
-  closeModal();
 });}
 
 if (profileId) {
   loadProfileById("../data/Freelancers.json", profileId);
-} else {
+} else if (document.getElementById("freelancerContainer")) {
   loadAllProfiles("../data/Freelancers.json");
 }
+
+loadReviews("../data/reviews.json");
