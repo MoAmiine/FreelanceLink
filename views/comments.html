@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avis & Témoignages de nos clients</title>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../styles/main.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+    <style>
+      body {
+        background-color: #f6f7f8;
+        font-family: "Inter", sans-serif;
+        color: #111418;
+      }
+      .text-primary {
+        color: #2b8cee !important;
+      }
+      .bg-primary {
+        background-color: #2b8cee !important;
+      }
+      .btn-primary {
+        background-color: #2b8cee;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #1f6ec4;
+      }
+      .card {
+        border-radius: 0.75rem;
+        transition: box-shadow 0.2s ease-in-out;
+      }
+      .card:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 20;
+        font-size: 20px;
+        vertical-align: middle;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(6px);
+        background-color: rgba(246, 247, 248, 0.9);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .avatar {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-3">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <span class="brand-box"></span>
+            <span class="text-white fw-semibold">Freelance<span class="text-cyan">Link.</span></span>
+          </a>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="nav">
+            <ul class="navbar-nav gap-3">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="../views/Freelance.html">Freelance</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Missions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="../views/comments.html">Avis & Témoignages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-grow-1">
+      <div class="container py-5 py-md-6">
+        <div class="text-center mb-5">
+          <h1 class="fw-black display-5 mb-3">Avis & Témoignages</h1>
+          <p class="text-secondary fs-5">
+            Découvrez ce que nos clients pensent de nous.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card border shadow-sm p-4 my-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="avatar me-3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwHEqZUhWjBQWAqjshBgxJAtyS8tetMqn6speM35x_cblg1GZrJntRP_ElqZ3g9IX1XDehO1fsknZcABYtkx1uGAolA9rQsJRIdYzkuMEW-YIRgya7kB-cpCNXwxH-_M6O3g9HHaQuJcrMK4W_eIpFAAHMwry-ZLajpRXcw-pIpFQf1_4S0xG_1p10bYOOAwWH5__ZzMslxbj2FSIwPKmBWi3NaK5FvKQQOzSTvKNekuBMxLil5OWPVVu3dGKJigCVhnDZS1y6RzjY'); "></div>
+                <div>
+                  <p class="fw-semibold mb-0">Nathalie Dubois</p>
+                  <small class="text-muted">2 weeks ago</small>
+                </div>
+              </div>
+              <div class="mb-2 text-warning">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+              </div>
+              <p>
+                “Un service client exceptionnel et un produit qui a dépassé
+                toutes mes attentes. Je recommande vivement !”
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card border shadow-sm p-4 my-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="avatar me-3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdy6zT8n68xsS5mkWwGQ7mSB1ftRxeUM6BzUopPBIWE4uSiQnXKybpbaG8QpwkVe9lqL9UCwzkunY_Mb13_8UWBj8JaH35yU4I0fs0Dme3mVBhfyphxBMMiTZ5GGPbpLS9lmCNliRDXlsQzYAda7CjJX4dgYtOCfgRI6064LlxmK02idzhhmSZhCg-6ixRhx_tD-8nGCJKzskSX2hC4P8_QbC9SckbCl_counFXomu_pFjzyIdMKgxf7Q01va7mmGnqScRtgOK2R2b'); "></div>
+                <div>
+                  <p class="fw-semibold mb-0">Jean-Pierre Martin</p>
+                  <small class="text-muted">1 month ago</small>
+                </div>
+              </div>
+              <div class="mb-2 text-warning">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+              </div>
+              <p>
+                “L’équipe a été incroyablement réactive et a su répondre à
+                toutes nos questions. La qualité est au rendez-vous.”
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card border shadow-sm p-4 my-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="avatar me-3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdy6zT8n68xsS5mkWwGQ7mSB1ftRxeUM6BzUopPBIWE4uSiQnXKybpbaG8QpwkVe9lqL9UCwzkunY_Mb13_8UWBj8JaH35yU4I0fs0Dme3mVBhfyphxBMMiTZ5GGPbpLS9lmCNliRDXlsQzYAda7CjJX4dgYtOCfgRI6064LlxmK02idzhhmSZhCg-6ixRhx_tD-8nGCJKzskSX2hC4P8_QbC9SckbCl_counFXomu_pFjzyIdMKgxf7Q01va7mmGnqScRtgOK2R2b'); "></div>
+                <div>
+                  <p class="fw-semibold mb-0">Jean-Pierre Martin</p>
+                  <small class="text-muted">1 month ago</small>
+                </div>
+              </div>
+              <div class="mb-2 text-warning">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+              </div>
+              <p>
+                “L’équipe a été incroyablement réactive et a su répondre à
+                toutes nos questions. La qualité est au rendez-vous.”
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card border shadow-sm p-4 my-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="avatar me-3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwHEqZUhWjBQWAqjshBgxJAtyS8tetMqn6speM35x_cblg1GZrJntRP_ElqZ3g9IX1XDehO1fsknZcABYtkx1uGAolA9rQsJRIdYzkuMEW-YIRgya7kB-cpCNXwxH-_M6O3g9HHaQuJcrMK4W_eIpFAAHMwry-ZLajpRXcw-pIpFQf1_4S0xG_1p10bYOOAwWH5__ZzMslxbj2FSIwPKmBWi3NaK5FvKQQOzSTvKNekuBMxLil5OWPVVu3dGKJigCVhnDZS1y6RzjY'); "></div>
+                <div>
+                  <p class="fw-semibold mb-0">Nathalie Dubois</p>
+                  <small class="text-muted">2 weeks ago</small>
+                </div>
+              </div>
+              <div class="mb-2 text-warning">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+              </div>
+              <p>
+                “Un service client exceptionnel et un produit qui a dépassé
+                toutes mes attentes. Je recommande vivement !”
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card border shadow-sm p-4 my-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="avatar me-3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdy6zT8n68xsS5mkWwGQ7mSB1ftRxeUM6BzUopPBIWE4uSiQnXKybpbaG8QpwkVe9lqL9UCwzkunY_Mb13_8UWBj8JaH35yU4I0fs0Dme3mVBhfyphxBMMiTZ5GGPbpLS9lmCNliRDXlsQzYAda7CjJX4dgYtOCfgRI6064LlxmK02idzhhmSZhCg-6ixRhx_tD-8nGCJKzskSX2hC4P8_QbC9SckbCl_counFXomu_pFjzyIdMKgxf7Q01va7mmGnqScRtgOK2R2b'); "></div>
+                <div>
+                  <p class="fw-semibold mb-0">Jean-Pierre Martin</p>
+                  <small class="text-muted">1 month ago</small>
+                </div>
+              </div>
+              <div class="mb-2 text-warning">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+              </div>
+              <p>
+                “L’équipe a été incroyablement réactive et a su répondre à
+                toutes nos questions. La qualité est au rendez-vous.”
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card border shadow-sm p-4 my-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="avatar me-3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdy6zT8n68xsS5mkWwGQ7mSB1ftRxeUM6BzUopPBIWE4uSiQnXKybpbaG8QpwkVe9lqL9UCwzkunY_Mb13_8UWBj8JaH35yU4I0fs0Dme3mVBhfyphxBMMiTZ5GGPbpLS9lmCNliRDXlsQzYAda7CjJX4dgYtOCfgRI6064LlxmK02idzhhmSZhCg-6ixRhx_tD-8nGCJKzskSX2hC4P8_QbC9SckbCl_counFXomu_pFjzyIdMKgxf7Q01va7mmGnqScRtgOK2R2b'); "></div>
+                <div>
+                  <p class="fw-semibold mb-0">Jean-Pierre Martin</p>
+                  <small class="text-muted">1 month ago</small>
+                </div>
+              </div>
+              <div class="mb-2 text-warning">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+              </div>
+              <p>
+                “L’équipe a été incroyablement réactive et a su répondre à
+                toutes nos questions. La qualité est au rendez-vous.”
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <h4 class="text-uppercase text-secondary fw-bold small letter-spacing-wide">
+            Partagez votre expérience
+          </h4>
+          <button class="btn btn-primary mt-3 px-4 py-2 fs-6 fw-bold">
+            Laissez votre avis
+          </button>
+        </div>
+      </div>
+    </main>
+        <footer class="bg-dark text-light pt-5 pb-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="fw-bold text-cyan mb-2">
+              Freelance<span class="text-white">.link</span>
+            </div>
+            <p class="small text-white">
+              A place to connect freelancers & clients.
+            </p>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-secondary">Company</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a class="text-white text-decoration-none" href="#">About</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="#">Services</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-secondary">For Clients</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a class="text-white text-decoration-none" href="#">Find Talent</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="#">Post Job</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-secondary">For Freelancers</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a class="text-white text-decoration-none" href="#">Find Work</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="#">Help</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-4">
+          <div class="small text-secondary">© 2025 Freelance.link</div>
+          <div class="small text-secondary">English • 1.0.0</div>
+        </div>
+      </div>
+    </footer>
+    <script src="../scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
