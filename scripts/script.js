@@ -94,10 +94,10 @@ function displayUsers(profile) {
 // }
 
 function displayReview(reviews) {
+  let review_card = document.querySelector(".Avis_container")
+  if (!review_card) return;
+  review_card.innerHTML = "";
   reviews.forEach(review => {
-    let review_card = document.querySelector(".Avis_container")
-    if (!review_card) return;
-    review_card.innerHTML = "";
 
     let stars = "";
     for (let i = 0; i < review.rating; i++) {
