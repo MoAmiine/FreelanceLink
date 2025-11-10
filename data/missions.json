@@ -30,5 +30,21 @@
         "prix" : 40,
         "type de contrat" : "sur site",
         "technologie" : "video editor"
+},
+{
+        "client" : "kbcjsakj",
+        "mission" : "Video a editer",
+        "description":"J'ai besoin d'un editeur video pour une publicite",
+        "prix" : 40,
+        "type de contrat" : "sur site",
+        "technologie" : "video editor"
+},
+{
+        "client" : "Falzan A",
+        "mission" : "Video a editer",
+        "description":"J'ai besoin d'un editeur video pour une publicite",
+        "prix" : 40,
+        "type de contrat" : "sur site",
+        "technologie" : "video editor"
 }
 ]
