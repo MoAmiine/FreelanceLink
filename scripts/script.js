@@ -82,22 +82,20 @@ function displayUsers(profile) {
   freelancer_container.appendChild(clone);
 }
 
-// function displayProjects(profile) {
-//     profile.projects.forEach(project => {
-//     let project_container = document.querySelector(".project-container");
-//     project_container.innerHTML +=`
-//       <div class="col-md-4">
-//         <div class="project-card border rounded-5 overflow-hidden shadow-sm">
-//           <div class="p-3">
-//             <h6 class="fw-bold mb-1">${project.title}</h6>
-//             <p class="text-muted small mb-2">${project.description}</p>
-//           </div>
-//           <img src="../assets/img/project.jpg" alt="${project.title}" class="w-100 project-img">
-//         </div>
-//       </div>
-//     `
-//   });
-// }
+function displayProjects(project) {
+  let project_container = document.querySelector(".project-container");
+    project_container.innerHTML +=`
+      <div class="col-md-4">
+        <div class="project-card border rounded-5 overflow-hidden shadow-sm">
+          <div class="p-3">
+            <h6 class="fw-bold mb-1">${project.title}</h6>
+            <p class="text-muted small mb-2">${project.description}</p>
+          </div>
+          <img src="../assets/img/project.jpg" alt="${project.title}" class="w-100 project-img">
+        </div>
+      </div>
+    `
+};
 
 function displayReview(reviews) {
   let review_card = document.querySelector(".Avis_container")
@@ -141,8 +139,8 @@ async function loadProfileById(file, id) {
   let profile = profiles.find(p => p.id === id);
   if (profile) {
     displayProfile(profile);
-    // displayProjects(profile);
     fillForm(profile);
+    profile.projects.forEach(project => displayProjects(project));
   } else {
     console.error("Profile not found!");
   }
@@ -151,13 +149,16 @@ async function loadProfileById(file, id) {
 async function loadAllProfiles(file) {
   let response = await fetch(file);
   let profiles = await response.json();
-  profiles.forEach(profile => displayUsers(profile));
+  profiles.forEach(profile => {
+    displayUsers(profile);
+    profile.projects.forEach(project => displayProjects(project))
+});
 }
 
 async function loadReviews(path) {
   let response = await fetch(path);
   let data = await response.json();
-  let reviews = data.reviews || [];
+  let reviews = data.reviews;
   
   let stored = JSON.parse(localStorage.getItem("profileData"));
   if (stored) reviews.push(stored);
@@ -187,6 +188,7 @@ if (form) {
 
 function displayAllReviews(reviews) {
   let container = document.querySelector(".reviews_container");
+  if(!container) return;
   container.innerHTML = "";
 
   reviews.forEach((review) => {
@@ -230,7 +232,7 @@ if (form) {
 
 if (profileId) {
   loadProfileById("../data/Freelancers.json", profileId);
-} else if (document.getElementById("freelancerContainer")) {
+} else {
   loadAllProfiles("../data/Freelancers.json");
 }
 
