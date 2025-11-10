@@ -59,6 +59,10 @@ function displayProfile(profile) {
   // document.querySelector(".app-box h4").textContent = `${profile.pricing.full_app_development}`;
 }
 
+
+
+
+
 function displayUsers(profile) {
   let freelancer_template = document.querySelector(".freelancer-template");
   let freelancer_container = document.getElementById("freelancerContainer");
@@ -134,6 +138,8 @@ let urlParams = new URLSearchParams(window.location.search);
 let profileId = parseInt(urlParams.get("id"));
 
 
+
+
 async function loadProfileById(file, id) {
   let response = await fetch(file);
   let profiles = await response.json();
@@ -155,13 +161,7 @@ async function loadAllProfiles(file) {
   profiles.forEach(profile => displayUsers(profile));
 }
 
-function fillForm(profile) {
-  document.querySelector("[name='first_name']").value = profile.first_name;
-  document.querySelector("[name='last_name']").value = profile.last_name;
-  document.querySelector("[name='bio']").value = profile.bio;
-  document.querySelector("[name='skills']").value = profile.skills.join(", ");
-  // document.querySelector("[name='hourly_rate']").value = profile.hourly_rate;
-}
+
 let form = document.getElementById("profileForm");
 if (form) {
   document.getElementById("profileForm").addEventListener("submit", (e) => {
@@ -186,3 +186,37 @@ if (profileId) {
 } else {
   loadAllProfiles("../data/Freelancers.json");
 }
+
+
+function fillForm(profile) {
+  document.querySelector("[name='first_name']").value = profile.first_name;
+  document.querySelector("[name='last_name']").value = profile.last_name;
+  document.querySelector("[name='bio']").value = profile.bio;
+  document.querySelector("[name='skills']").value = profile.skills.join(", ");
+  // document.querySelector("[name='hourly_rate']").value = profile.hourly_rate;
+}
+let profils = [];
+
+fetch("../data/Freelancers.json")
+  .then(response => response.json())
+  .then(data => {
+    profils = data;
+    displayUsers(profils);  
+  })
+  .catch(error => console.error('Error loading freelancers:', error));
+
+
+function filterByCategory() {
+  const categorie = document.getElementById("filter-category").value;
+  
+  if (categorie) {
+    const filteredProfiles = profils.filter(prof => prof.bio === categorie);
+    displayUsers(filteredProfiles);
+  } else {
+    displayUsers(profils); 
+  }
+}
+
+
+
+document.getElementById('filter-category').addEventListener('change', filterByCategory);

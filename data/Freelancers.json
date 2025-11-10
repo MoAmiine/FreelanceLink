@@ -8,7 +8,7 @@
         "skills": ["graphic designre","DevOps", "figma","frontEnd dev", "back Dev"],
         "price":50,
         "description": "what all this about",
-        "bio": "full satck dev",
+        "bio": "Design",
         "jobs":1500
 },
 {
@@ -19,7 +19,7 @@
         "rating": 2,
         "skills": ["full Stack dev","graphic designre"], 
         "price": 10,
-        "bio": "full satck dev",
+        "bio": "Déveleppement",
         "description": "what all this about",
         "jobs":10
 },
@@ -31,8 +31,8 @@
         "rating": 1,
         "skills": ["full stack dev","bootstrap"],
         "price":1.3,
-        "description": "what all this about",
-        "bio": "full satck dev",
+        "description": "Rédaction",
+        "bio": "Déveleppement",
         "jobs":100
 },
 {
@@ -44,7 +44,7 @@
         "skills": ["full stack dev", "figma","HTML","CSS"],
         "price":20,
         "description": "what all this about",
-        "bio": "full satck dev",
+        "bio": "Marketing",
         "jobs":159
 },
 {
@@ -56,7 +56,7 @@
         "skills": ["full stack dev", "figma","HTML","CSS"],
         "price":20,
         "description": "what all this about",
-        "bio": "full satck dev",
+        "bio": "Design",
         "jobs":159
 },
 {
@@ -68,7 +68,13 @@
         "skills": ["full stack dev", "figma","HTML","CSS"],
         "price":20,
         "description": "what all this about",
-        "bio": "full satck dev",
+        "bio": "Marketing",
         "jobs":159
 }
 ]
+
+
+
+
+
+
