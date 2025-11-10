@@ -1,0 +1,22 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "nom": "Développement web",
+      "description": "Création de sites web modernes et responsives",
+      "prix": 400,
+      "duree": "2 semaines",
+
+      "disponibilite": "Disponible"
+    },
+    {
+      "id": 2,
+      "nom": "Design UX/UI",
+      "description": "Conception de l’expérience utilisateur",
+      "prix": 250,
+      "duree": "1 semaine",
+     
+      "disponibilite": "Disponible"
+    }
+  ]
+}
