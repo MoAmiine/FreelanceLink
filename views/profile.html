@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FreelanceLink — Freelancer Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="modal-connexion" id="loginModal">
+        <div class="modal-content w-50">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="m-0">Modifier Mon Profil</h5>
+                <i class="bi bi-x-lg" id="close" style="cursor:pointer;"></i>
+            </div>
+            <form id="profileForm">
+                <label class="my-3">First Name</label>
+                <input class="form-control" type="text" name="first_name" required placeholder="Johnson">
+
+                <label class="my-3">Last Name</label>
+                <input class="form-control" type="text" name="last_name" required placeholder="Johnson">
+
+                <label class="my-3">Bio</label>
+                <input class="form-control" type="text" name="bio" required placeholder="Full-Stack Developer & UI/UX Designer">
+
+                <label class="my-3">Skills</label>
+                <input class="form-control" type="text" name="skills" required placeholder="HTML, CSS, JS, PHP">
+
+                <label class="my-3">hourly rate ($/h)</label>
+                <input class="form-control" type="number" name="hourly_rate" required placeholder="40">
+                <center class="mt-4">
+                  <button type="submit" class="btn btn-outline-secondary">Save the modifications</button>
+                </center>
+            </form>
+        </div>
+    </div>
+    <header class="bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-3">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <span class="brand-box"></span>
+            <span class="text-white fw-semibold">Freelance<span class="text-cyan">Link.</span></span>
+          </a>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="nav">
+            <ul class="navbar-nav gap-3">
+              <li class="nav-item"><a class="nav-link text-white" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="Freelance.html">Freelance</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#">Missions</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#">Avis & Témoignages</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="container" style="padding-top: 5em;">
+      <div class="profile-header d-flex flex-wrap align-items-center gap-4">
+        <img src="../assets/img/user.jpg" alt="Freelancer Photo" class="profile-photo"/>
+        <div>
+          <div class="profile_info">
+          </div>
+          <div class="rating mb-2">
+          </div>
+          <button class="btn btn-hire rounded-pill px-4 py-2">
+            Hire Me
+          </button>
+          <button class="btn btn-hire rounded-pill px-4 py-2" id="openmodal">
+            Modifier Mon Profile
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="container my-5">
+      <h4 class="fw-semibold mb-3">About</h4>
+      <p class="about">
+      </p>
+    </section>
+    <section class="container my-5">
+      <h4 class="fw-semibold mb-3">Skills</h4>
+      <div class="skills">
+      </div>
+    </section>
+    <section class="container my-5">
+      <h4 class="fw-semibold mb-4">Projects</h4>
+      <div class="project-container row g-4">
+
+      </div>
+    </section>
+    <section class="container my-5">
+      <h4 class="fw-semibold mb-4">Tarifs</h4>
+      <div class="row g-4 text-center">
+        <div class="col-md-4">
+          <div class="hourly-rate-box">
+            <h6 class="fw-bold mb-2">Hourly Rate</h6>
+            <h4 class="text-cyan fw-bold"></h4>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="website-project-box">
+            <h6 class="fw-bold mb-2">Website Project</h6>
+            <h4 class="text-cyan fw-bold">$700 – $1200</h4>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="app-box">
+            <h6 class="fw-bold mb-2">Full App Development</h6>
+            <h4 class="text-cyan fw-bold">$2000+</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container my-5">
+      <h4 class="fw-semibold mb-4">Avis</h4>
+      <div class="Avis_container row g-4">
+
+      </div>
+    </section>
+    <footer class="bg-dark text-light pt-5 pb-3">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="fw-bold text-cyan mb-2">
+              Freelance<span class="text-white">.link</span>
+            </div>
+            <p class="small text-white">
+              A place to connect freelancers & clients.
+            </p>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-secondary">Company</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a class="text-white text-decoration-none" href="#">About</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="#">Services</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-secondary">For Clients</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a class="text-white text-decoration-none" href="#">Find Talent</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="#">Post Job</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-secondary">For Freelancers</h6>
+            <ul class="list-unstyled small">
+              <li>
+                <a class="text-white text-decoration-none" href="#">Find Work</a>
+              </li>
+              <li>
+                <a class="text-white text-decoration-none" href="#">Help</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-4">
+          <div class="small text-secondary">© 2025 Freelance.link</div>
+          <div class="small text-secondary">English • 1.0.0</div>
+        </div>
+      </div>
+    </footer>
+  <script src="../scripts/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
