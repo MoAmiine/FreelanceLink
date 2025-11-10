@@ -145,6 +145,31 @@ header.scrolled {
 footer {
   border-top: 1px solid rgba(255, 255, 255, 0.02);
 }
+.missions{
+  justify-content: center;
+}
+.card-group{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.card{
+  justify-self: center;
+}
+.postulez{
+  width: 10rem;
+  align-self: flex-end;
+  margin-top: 20px;
+  background: #36dd81;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #36dd81;
+}
+.postulez:hover{
+  box-shadow: none;
+  background: #2aaf66;
+}
+
 
 @media (max-width: 767px) {
   .hero-overlay {
