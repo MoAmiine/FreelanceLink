@@ -15,15 +15,9 @@ if (openBtn && closeBtn && modal) {
   openBtn.addEventListener("click", () => modal.style.display = "flex");
   closeBtn.addEventListener("click", () => modal.style.display = "none");
 }
-function openModal() {
-  modal.style.display = "flex";
-}
-
-function closeModal() {
-  modal.style.display = "none";
-}
 
 function displayProfile(profile) {
+  if (!document.querySelector(".profile_info")) return;
   document.querySelector(".profile_info").innerHTML = `
     <h2 class="profile-name mb-1">${profile.first_name} ${profile.last_name}</h2>
     <p class="mb-2">${profile.bio}</p>
@@ -39,7 +33,6 @@ function displayProfile(profile) {
 
   let stars = "";
   
-  
   for (let index = 0; index < profile.rating; index++) {
     stars += `<i class="bi bi-star-fill"></i>`
   }
@@ -54,9 +47,9 @@ function displayProfile(profile) {
   document.querySelector(".rating").innerHTML = `
     ${stars}
   `
-  document.querySelector(".hourly-rate-box h4").textContent = `$${profile.hourly_rate} / h`;
-  document.querySelector(".website-project-box h4").textContent = `${profile.pricing.website_project}`;
-  document.querySelector(".app-box h4").textContent = `${profile.pricing.full_app_development}`;
+  // document.querySelector(".hourly-rate-box h4").textContent = `$${profile.hourly_rate} / h`;
+  // document.querySelector(".website-project-box h4").textContent = `${profile.pricing.website_project}`;
+  // document.querySelector(".app-box h4").textContent = `${profile.pricing.full_app_development}`;
 }
 
 function displayUsers(profile) {
@@ -83,26 +76,28 @@ function displayUsers(profile) {
   freelancer_container.appendChild(clone);
 }
 
-function displayProjects(profile) {
-    profile.projects.forEach(project => {
-    let project_container = document.querySelector(".project-container");
-    project_container.innerHTML +=`
-      <div class="col-md-4">
-        <div class="project-card border rounded-5 overflow-hidden shadow-sm">
-          <div class="p-3">
-            <h6 class="fw-bold mb-1">${project.title}</h6>
-            <p class="text-muted small mb-2">${project.description}</p>
-          </div>
-          <img src="../assets/img/project.jpg" alt="${project.title}" class="w-100 project-img">
-        </div>
-      </div>
-    `
-  });
-}
+// function displayProjects(profile) {
+//     profile.projects.forEach(project => {
+//     let project_container = document.querySelector(".project-container");
+//     project_container.innerHTML +=`
+//       <div class="col-md-4">
+//         <div class="project-card border rounded-5 overflow-hidden shadow-sm">
+//           <div class="p-3">
+//             <h6 class="fw-bold mb-1">${project.title}</h6>
+//             <p class="text-muted small mb-2">${project.description}</p>
+//           </div>
+//           <img src="../assets/img/project.jpg" alt="${project.title}" class="w-100 project-img">
+//         </div>
+//       </div>
+//     `
+//   });
+// }
 
-function displayReview(profile) {
-  profile.reviews.forEach(review => {
+function displayReview(reviews) {
+  reviews.forEach(review => {
     let review_card = document.querySelector(".Avis_container")
+    if (!review_card) return;
+    review_card.innerHTML = "";
 
     let stars = "";
     for (let i = 0; i < review.rating; i++) {
@@ -133,7 +128,6 @@ function displayReview(profile) {
 let urlParams = new URLSearchParams(window.location.search);
 let profileId = parseInt(urlParams.get("id"));
 
-
 async function loadProfileById(file, id) {
   let response = await fetch(file);
   let profiles = await response.json();
@@ -141,8 +135,7 @@ async function loadProfileById(file, id) {
   let profile = profiles.find(p => p.id === id);
   if (profile) {
     displayProfile(profile);
-    displayProjects(profile);
-    displayReview(profile);
+    // displayProjects(profile);
     fillForm(profile);
   } else {
     console.error("Profile not found!");
@@ -152,7 +145,57 @@ async function loadProfileById(file, id) {
 async function loadAllProfiles(file) {
   let response = await fetch(file);
   let profiles = await response.json();
-  let profile = profiles.profile;
+  profiles.forEach(profile => displayUsers(profile));
+}
+
+async function loadReviews(path) {
+  let response = await fetch(path);
+  let data = await response.json();
+  let reviews = data.reviews || [];
+  
+  let stored = JSON.parse(localStorage.getItem("profileData"));
+  if (stored) reviews.push(stored);
+  
+  displayReview(reviews);
+  displayAllReviews(reviews);
+}
+
+let form = document.getElementById("profileForm");
+
+if (form) {
+  form.addEventListener("submit", (e) => {
+    let first = e.target.first_name.value;
+    let last = e.target.last_name.value;
+    let comment = e.target.comment.value;
+    let rating = e.target.rating.value;
+
+    let profile = {
+      author: `${first} ${last}`,
+      rating: rating,
+      comment: comment,
+    };
+
+    localStorage.setItem("profileData", JSON.stringify(profile));
+  });
+}
+
+function displayAllReviews(reviews) {
+  let container = document.querySelector(".reviews_container");
+  container.innerHTML = "";
+
+  reviews.forEach((review) => {
+    let stars = "";
+    for (let i = 0; i < review.rating; i++) stars += `<i class="bi bi-star-fill text-warning"></i>`;
+    for (let i = review.rating; i < 5; i++) stars += `<i class="bi bi-star"></i>`;
+
+    container.innerHTML += `
+      <div class="card mb-3 p-3 shadow-sm">
+        <h5 class="mb-1">${review.author}</h5>
+        <div class="mb-2">${stars}</div>
+        <p class="mb-0">${review.comment}</p>
+      </div>
+    `;
+  });
 }
 
 function fillForm(profile) {
@@ -160,29 +203,29 @@ function fillForm(profile) {
   document.querySelector("[name='last_name']").value = profile.last_name;
   document.querySelector("[name='bio']").value = profile.bio;
   document.querySelector("[name='skills']").value = profile.skills.join(", ");
-  document.querySelector("[name='hourly_rate']").value = profile.hourly_rate;
+  // document.querySelector("[name='hourly_rate']").value = profile.hourly_rate;
 }
-let form = document.getElementById("profileForm");
 if (form) {
-  document.getElementById("profileForm").addEventListener("submit", (e) => {
+  form.addEventListener("submit", (e) => {
   e.preventDefault();
   let profile = {
     first_name: document.querySelector("[name='first_name']").value,
     last_name: document.querySelector("[name='last_name']").value,
     bio: document.querySelector("[name='bio']").value,
     skills: document.querySelector("[name='skills']").value.split(",").map(s => s.trim()),
-    hourly_rate: document.querySelector("[name='hourly_rate']").value,
+    // hourly_rate: document.querySelector("[name='hourly_rate']").value,
     about: document.querySelector(".about").textContent
   };
 
   localStorage.setItem("profileData", JSON.stringify(profile));
 
   displayProfile(profile);
-  closeModal();
 });}
 
 if (profileId) {
   loadProfileById("../data/Freelancers.json", profileId);
-} else {
-  loadAllProfiles("../data/data.json");
+} else if (document.getElementById("freelancerContainer")) {
+  loadAllProfiles("../data/Freelancers.json");
 }
+
+loadReviews("../data/reviews.json");
