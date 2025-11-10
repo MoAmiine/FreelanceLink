@@ -1,3 +1,6 @@
+//==================== home page ================
+// the window scroll action nav bar:
+
 window.addEventListener('scroll', function() {
   let navbar = document.querySelector('header');
   if (window.scrollY > 50) {
@@ -6,6 +9,9 @@ window.addEventListener('scroll', function() {
     navbar.classList.remove('scrolled');
   }
 });
+
+
+
 
 let modal = document.getElementById("loginModal");
 let openBtn = document.getElementById("openmodal");
