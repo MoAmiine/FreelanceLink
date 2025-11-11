@@ -53,9 +53,9 @@ function displayProfile(profile) {
   document.querySelector(".rating").innerHTML = `
     ${stars}
   `
-  // document.querySelector(".hourly-rate-box h4").textContent = `$${profile.hourly_rate} / h`;
-  // document.querySelector(".website-project-box h4").textContent = `${profile.pricing.website_project}`;
-  // document.querySelector(".app-box h4").textContent = `${profile.pricing.full_app_development}`;
+  document.querySelector(".hourly-rate-box h4").textContent = `$${profile.hourly_rate} /h`;
+  document.querySelector(".website-project-box h4").textContent = `${profile.website_project}`;
+  document.querySelector(".app-box h4").textContent = `${profile.full_app_development}`;
 }
 
 function displayUsers(profile) {
@@ -72,7 +72,7 @@ function displayUsers(profile) {
       <p class="subtitle">${profile.bio}</p>
       <div class="rating d-flex justify-content-center align-items-center">
         <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; color:#f59e0b;">star</span>
-        <strong>5.0</strong>
+        <strong>${profile.rating}</strong>
         <span class="text-muted-small">(98)</span>
       </div>
     </div>
@@ -155,7 +155,7 @@ async function loadAllProfiles(file) {
 async function loadReviews(path) {
   let response = await fetch(path);
   let data = await response.json();
-  let reviews = data.reviews;
+  let reviews = data.reviews || [];
   
   let stored = JSON.parse(localStorage.getItem("profileData"));
   if (stored) reviews.push(stored);
@@ -208,24 +208,25 @@ function fillForm(profile) {
   document.querySelector("[name='last_name']").value = profile.last_name;
   document.querySelector("[name='bio']").value = profile.bio;
   document.querySelector("[name='skills']").value = profile.skills.join(", ");
-  // document.querySelector("[name='hourly_rate']").value = profile.hourly_rate;
+  document.querySelector("[name='hourly_rate']").value = profile.hourly_rate;
 }
+
 if (form) {
-  form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let profile = {
-    first_name: document.querySelector("[name='first_name']").value,
-    last_name: document.querySelector("[name='last_name']").value,
-    bio: document.querySelector("[name='bio']").value,
-    skills: document.querySelector("[name='skills']").value.split(",").map(s => s.trim()),
-    // hourly_rate: document.querySelector("[name='hourly_rate']").value,
-    about: document.querySelector(".about").textContent
-  };
+  form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    let profile = {
+      first_name: document.querySelector("[name='first_name']").value,
+      last_name: document.querySelector("[name='last_name']").value,
+      bio: document.querySelector("[name='bio']").value,
+      skills: document.querySelector("[name='skills']").value.split(","),
+      hourly_rate: document.querySelector("[name='hourly_rate']").value,
+      about: document.querySelector(".about").textContent
+    };
 
   localStorage.setItem("profileData", JSON.stringify(profile));
-
   displayProfile(profile);
-});}
+  })
+}
 
 if (profileId) {
   loadProfileById("../data/Freelancers.json", profileId);
