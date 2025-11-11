@@ -30,11 +30,9 @@
         "description": "Admin panel with real-time stats"
       }
     ],
-        "pricing": {
       "hourly_rate": "40",
       "website_project": "$700 – $1200",
       "full_app_development": "$2000+"
-    }
   },
   {
     "id": 2,

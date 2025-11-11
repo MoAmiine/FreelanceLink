@@ -61,6 +61,7 @@ function displayProfile(profile) {
 function displayUsers(profile) {
   let freelancer_template = document.querySelector(".freelancer-template");
   let freelancer_container = document.getElementById("freelancerContainer");
+  if(!freelancer_container || !freelancer_template) return
   let clone = freelancer_template.cloneNode(true)
   clone.classList.remove("d-none")
   clone.innerHTML = `  
@@ -101,7 +102,8 @@ function displayReview(reviews) {
   let review_card = document.querySelector(".Avis_container")
   if (!review_card) return;
   review_card.innerHTML = "";
-  reviews.forEach(review => {
+  let sorted = reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+  sorted.forEach(review => {
 
     let stars = "";
     for (let i = 0; i < review.rating; i++) {
