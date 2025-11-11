@@ -149,10 +149,7 @@ async function loadProfileById(file, id) {
 async function loadAllProfiles(file) {
   let response = await fetch(file);
   let profiles = await response.json();
-  profiles.forEach(profile => {
-    displayUsers(profile);
-    profile.projects.forEach(project => displayProjects(project))
-});
+  profiles.forEach(profile => displayUsers(profile));
 }
 
 async function loadReviews(path) {
