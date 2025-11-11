@@ -16,10 +16,9 @@ fetch("/data/missions.json")
     missions.forEach((mission) => {
       let card = document.createElement("div");
       card.className = "card";
-      card.style.width = "30rem";
+      card.style.width = "25rem";
       card.style.marginBottom = "3rem";
       card.style.marginTop = "2rem"
-      card.style.display = "inline-block";
       card.style.textAlign = "center";
       card.style.padding = "10px";
       card.style.boxShadow = "0 0 15px rgba(0, 0, 0, 0.47)";
@@ -35,3 +34,8 @@ fetch("/data/missions.json")
       page.querySelector(".card-group").appendChild(card);
     });
   });
+  const addmission = page.getElementById('addmission');
+
+    
+    
+
