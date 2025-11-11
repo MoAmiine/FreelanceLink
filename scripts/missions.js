@@ -1,6 +1,8 @@
 let page = document.getElementById("missions");
 let title = document.getElementById('missions-title');
 let cards = document.getElementById('card-group')
+let missionmodal = document.getElementById('missionmodal');
+missionmodal.style.display = 'none';
 title.style.fontWeight = 'bold'
 title.style.fontSize = '3rem'
 title.style.lineHeight = '10rem'
@@ -34,8 +36,11 @@ fetch("/data/missions.json")
       page.querySelector(".card-group").appendChild(card);
     });
   });
-  const addmission = page.getElementById('addmission');
+let modal = document.getElementById("missionmodal");
+let openBtn = document.getElementById("addmission");
+let closeBtn = document.getElementById("publier");
 
-    
-    
-
+if (openBtn && closeBtn && modal) {
+  openBtn.addEventListener("click", () => modal.style.display = "flex");
+  closeBtn.addEventListener("click", () => modal.style.display = "none");
+}

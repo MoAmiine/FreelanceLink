@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -59,6 +60,20 @@
         <div class="card-group" id="card-group">
     </div>
     </section>
+    <div id="missionmodal" class="modal-backdrop">
+        <form class="modal-content" id="mission-form">
+            <h2 class="mmtitle">Ajouter une mission</h2>
+            <label for="name">Votre nom</label>
+            <input type="text" id="name" name="name" required placeholder="Entrez votre nom">
+            <label for="mission">Votre mission</label>
+            <input type="text" id="mission" name="mission" required placeholder="titre de votre mission">
+            <label for="budget">Votre budget</label>
+            <input type="number" id="budget" name="budget" required placeholder="Entrez votre budget">
+            <label for="description">Description de la mission</label>
+            <textarea id="description" name="description" required placeholder="Décrivez votre mission"></textarea>
+            <button type="submit" class="postulez" id="publier">Publier</button>
+        </form>
+    </div>
     <footer class="bg-dark text-light pt-5 pb-3">
         <div class="container">
             <div class="row g-4">
