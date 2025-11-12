@@ -1,50 +1,51 @@
  [
 {
-        "client" : "Falzan A",
-        "mission" : "Video a editer",
-        "description":"J'ai besoin d'un editeur video pour une publicite",
-        "prix" : 40,
-        "type de contrat" : "sur site",
-        "technologie" : "video editor"
+        "client" : "TechNova Solutions",
+        "mission" : "Création d'une interface web responsive",
+        "description":"Développer une interface moderne en HTML, CSS et JavaScript pour une application de gestion de tâches. L'objectif est d’obtenir un design fluide et compatible mobile.",
+        "prix" : "650 €",
+        "typedecontrat" : "À distance",
+        "technologie" : "HTML, CSS, JavaScript, Bootstrap"
 },
 {
-        "client" : "Fouad",
-        "mission" : "Creer un site web",
-        "description":"J'ai besoin d'un developpeur web pour creer un site web pour mon projet",
-        "prix" : 40,
-        "type de contrat" : "sur site",
-        "technologie" : "Web developper"
+        "client" : "BrightApp Studio",
+        "mission" : "Refonte du design d’une application mobile",
+        "description":"Concevoir une nouvelle interface utilisateur pour une application existante. Le design doit améliorer la navigation et offrir une meilleure expérience utilisateur.",
+        "prix" : "450 €",
+        "typedecontrat" : "À distance",
+        "technologie" : "Figma, Adobe XD, Illustrator"
 },
 {
-        "client" : "Waleed",
-        "mission" : "",
-        "description":"J'ai besoin d'un editeur video pour une publicite",
-        "prix" : 40,
-        "type de contrat" : "sur site",
-        "technologie" : "video editor"
+        "client" : "GreenMove",
+        "mission" : "Application de covoiturage écologique",
+        "description":"Créer une application mobile permettant la mise en relation entre conducteurs et passagers, avec géolocalisation et système de paiement intégré.",
+        "prix" : "1 200 €",
+        "typedecontrat" : "À distance",
+        "technologie" : "React Native, Firebase, Google Maps API"
 },
 {
-        "client" : "Falzan A",
-        "mission" : "Video a editer",
-        "description":"J'ai besoin d'un editeur video pour une publicite",
-        "prix" : 40,
-        "type de contrat" : "sur site",
-        "technologie" : "video editor"
+        "client" : "WebImpact Agency",
+        "mission" : "Rédaction d’articles optimisés SEO",
+        "description":"Rédiger 10 articles informatifs et bien structurés sur le thème du marketing digital. Les textes doivent être optimisés pour le référencement naturel.",
+        "prix" : "300 €",
+        "typedecontrat" : "À distance",
+        "technologie" : "WordPress, Yoast SEO, Google Keyword Planner"
 },
 {
-        "client" : "kbcjsakj",
-        "mission" : "Video a editer",
-        "description":"J'ai besoin d'un editeur video pour une publicite",
-        "prix" : 40,
-        "type de contrat" : "sur site",
-        "technologie" : "video editor"
+        "client" : "CloudLink",
+        "mission" : "Création d’une API REST sécurisée",
+        "description":"Concevoir une API RESTful pour gérer les utilisateurs et les données du site. L’API doit inclure un système d’authentification JWT et une base de données MongoDB.",
+        "prix" : "800 €",
+        "typedecontrat" : "Sur site",
+        "technologie" : "Node.js, Express.js, MongoDB, JWT"
 },
 {
-        "client" : "Falzan A",
-        "mission" : "Video a editer",
-        "description":"J'ai besoin d'un editeur video pour une publicite",
-        "prix" : 40,
-        "type de contrat" : "sur site",
-        "technologie" : "video editor"
+        "client" : "TechNova Solutions",
+        "mission" : "Création d'une interface web responsive",
+        "description":"Développer une interface moderne en HTML, CSS et JavaScript pour une application de gestion de tâches. L'objectif est d’obtenir un design fluide et compatible mobile.",
+        "prix" : "650 €",
+        "typedecontrat" : "À distance",
+        "technologie" : "HTML, CSS, JavaScript, Bootstrap"
 }
+
 ]

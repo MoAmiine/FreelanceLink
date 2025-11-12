@@ -288,3 +288,65 @@ footer {
   box-shadow: none;
   background: #2aaf66;
 }
+#missionmodal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  justify-self: center;
+  background: #fff;
+  position: fixed;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.268);  
+}
+.modal-content{
+  border-radius: 15px;
+  width: 70%;
+  height: 80%;
+  padding: 20px;
+  line-height: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.mmtitle{
+  text-align: center;
+  font-weight: bold;
+}
+.side1{
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.side2{
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+input{
+  border-radius: 15px;
+  border: solid 1px;
+  padding: 5px;
+}
+textarea{
+  border-radius: 30px;
+  padding: 10px;
+}
+.mission-client{
+  font-weight: bold;
+}
+.mission-description{
+  font-size: 15px;
+}
+.mission-details{
+  gap: 20px;
+}
+.mission-type{
+  background: rgb(172, 172, 172);
+  
+}
+
