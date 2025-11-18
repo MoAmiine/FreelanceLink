@@ -1,0 +1,35 @@
+{
+    "reviews": [
+      {
+        "author": "Aymen Oumaalla",
+        "rating": 5,
+        "comment": "Sarah did an amazing job on our company’s website! Communication was great and delivery was fast."
+      },
+      {
+        "author": "Choiab",
+        "rating": 4,
+        "comment": "Sarah did an amazing job on our company’s website! Communication was great and delivery was fast."
+      },
+      {
+        "author": "Amin",
+        "rating": 3,
+        "comment": "Sarah did an amazing job on our company’s website! Communication was great and delivery was fast."
+      },
+      {
+        "author": "Youness",
+        "rating": 4,
+        "comment": "Sarah did an amazing job on our company’s website! Communication was great and delivery was fast."
+      },
+      {
+        "author": "Chi wa7d akher",
+        "rating": 1,
+        "comment": "Sarah did an amazing job on our company’s website! Communication was great and delivery was fast."
+      },
+      {
+        "author": "Saad Oumaalla",
+        "rating": 2,
+        "comment": "Great experience overall. Very talented and reliable freelancer. Highly recommend!"
+      }
+    ]
+
+}

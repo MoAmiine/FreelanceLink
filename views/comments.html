@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avis & Témoignages de nos clients</title>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../styles/main.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    </head>
+    <body class="bg-light">
+        <div class="modal-connexion" id="loginModal">
+            <div class="modal-content w-50">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="m-0">Ajoutez Votre Avis</h5>
+                    <i class="bi bi-x-lg" id="close" style="cursor:pointer;"></i>
+                </div>
+                <form id="profileForm">
+                    <label class="my-3">Prénom</label>
+                    <input class="form-control" type="text" name="first_name" required placeholder="Johnson">
+
+                    <label class="my-3">Nom</label>
+                    <input class="form-control" type="text" name="last_name" required placeholder="Johnson">
+                    
+                    <label class="my-3">rating</label>
+                    <input class="form-control" type="number" min="0" max="5" name="rating" required placeholder="0 Star">
+
+                    <label class="my-3">Commentaire</label>
+                    <textarea class="form-control" name="comment" required placeholder="Veuillez insérer votre commentaire ici !"></textarea>
+
+                    <center class="mt-4">
+                        <button type="submit" class="btn btn-outline-secondary">Insérer</button>
+                    </center>
+                </form>
+            </div>
+        </div>
+        <header class="bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-3">
+                <div class="container">
+                    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                        <span class="brand-box"></span>
+                        <span class="text-white fw-semibold">Freelance<span class="text-cyan">Link.</span></span>
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="nav">
+                        <ul class="navbar-nav gap-3">
+                            <li class="nav-item"><a class="nav-link text-white" href="../index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-white" href="#">Services</a></li>
+                            <li class="nav-item"><a class="nav-link text-white" href="../views/Freelance.html">Freelance</a></li>
+                            <li class="nav-item"><a class="nav-link text-white" href="./views/missions.html">Missions</a></li>
+                            <li class="nav-item"><a class="nav-link text-white" href="../views/comments.html">Avis & Témoignages</a></li>
+                            <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="mt-5">
+            <div class="container py-5 py-md-6">
+                <div class="text-center mb-5">
+                    <h1 class="fw-black display-5 mb-3">Avis & Témoignages</h1>
+                    <p class="text-secondary fs-5">
+                        Découvrez ce que nos clients pensent de nous.
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="reviews_container"></div>
+                </div>
+                <div class="text-center mt-5">
+                    <h4 class="text-uppercase text-secondary fw-bold small letter-spacing-wide">
+                        Partagez votre expérience
+                    </h4>
+                    <button class="btn btn-primary mt-3 px-4 py-2 fs-6 fw-bold" id="openmodal">
+                        Laissez votre avis
+                    </button>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-dark text-light pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-3">
+                <div class="fw-bold text-cyan mb-2">Freelance<span class="text-white">.link</span></div>
+                <p class="small text-white">A place to connect freelancers & clients.</p>
+            </div>
+            <div class="col-md-3">
+                <h6 class="text-secondary">Company</h6>
+                <ul class="list-unstyled small">
+                <li>
+                    <a class="text-white text-decoration-none" href="#">About</a>
+                </li>
+                <li>
+                    <a class="text-white text-decoration-none" href="#">Services</a>
+                </li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h6 class="text-secondary">For Clients</h6>
+                <ul class="list-unstyled small">
+                <li>
+                    <a class="text-white text-decoration-none" href="#">Find Talent</a>
+                </li>
+                <li>
+                    <a class="text-white text-decoration-none" href="#">Post Job</a>
+                </li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h6 class="text-secondary">For Freelancers</h6>
+                <ul class="list-unstyled small">
+                <li>
+                    <a class="text-white text-decoration-none" href="#">Find Work</a>
+                </li>
+                <li>
+                    <a class="text-white text-decoration-none" href="#">Help</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mt-4">
+            <div class="small text-secondary">© 2025 Freelance.link</div>
+            <div class="small text-secondary">English • 1.0.0</div>
+            </div>
+        </div>
+        </footer>
+        <script src="../scripts/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
