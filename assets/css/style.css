@@ -297,7 +297,7 @@ footer {
   background: #fff;
   position: fixed;
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.268);  
+  background: rgba(255, 255, 255, 0);  
 }
 .modal-content{
   border-radius: 15px;

@@ -20,7 +20,7 @@ fetch("/data/missions.json")
 
 function loadmissions(missions) {
     missions.forEach((mission) => {
-      
+
       let card = document.createElement("div");
       card.className = "card";
       card.style.width = "25rem";
