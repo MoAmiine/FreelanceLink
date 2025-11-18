@@ -58,6 +58,10 @@ function displayProfile(profile) {
   document.querySelector(".app-box h4").textContent = `${profile.full_app_development}`;
 }
 
+
+
+
+
 function displayUsers(profile) {
   let freelancer_template = document.querySelector(".freelancer-template");
   let freelancer_container = document.getElementById("freelancerContainer");

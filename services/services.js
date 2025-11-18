@@ -19,7 +19,6 @@ function fillCategories() {
         option2.value = cat;
         option2.textContent = cat;
         editSelect.appendChild(option2);
-        
     });
 }
 
